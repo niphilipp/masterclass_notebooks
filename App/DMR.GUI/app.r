@@ -9,9 +9,9 @@ library(shinythemes)
 # Load saved data (replacing notebook memory)
 # -----------------------------
 
-myLoad <- readRDS("/home/jovyan/work/myLoad.rds")
-myNorm <- readRDS("/home/jovyan/work/myNorm.rds")
-myDMR  <- readRDS("/home/jovyan/work/myDMR.rds")
+myLoad <- readRDS("/home/jovyan/myLoad.rds")
+myNorm <- readRDS("/home/jovyan/myNorm.rds")
+myDMR  <- readRDS("/home/jovyan/myDMR.rds")
 DMR=myDMR
 beta=myNorm
 pheno=myLoad$pd$Sample_Group
