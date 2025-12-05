@@ -10,9 +10,9 @@ library(ChAMPdata)
 # -----------------------------
 # Load saved data (replacing notebook memory)
 # -----------------------------
-myDMP  <- readRDS("/home/jovyan/work/myDMP.rds")
-myNorm <- readRDS("/home/jovyan/work/myNorm.rds")
-myLoad <- readRDS("/home/jovyan/work/myLoad.rds")
+myDMP  <- readRDS("/home/jovyan/myDMP.rds")
+myNorm <- readRDS("/home/jovyan/myNorm.rds")
+myLoad <- readRDS("/home/jovyan/myLoad.rds")
 
 # Set globals
 utils::globalVariables(c("myLoad","myDMP","myNorm","probe","proportion","cgi","gene",
