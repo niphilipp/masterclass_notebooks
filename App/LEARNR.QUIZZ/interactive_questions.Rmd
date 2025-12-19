@@ -29,13 +29,15 @@ options(tutorial.event_recorder = tutorial_event_recorder)
 quiz(
   question("Bei der Methylierung von DNA wird die DNA Sequenz verändert.",
     answer("Wahr"),
-    answer("Falsch", correct=TRUE)
+    answer("Falsch", correct=TRUE),
+    allow_retry=TRUE
   ),
   question("Was sind Auswirkungen der DNA-Methylierung?",
     answer("Durch hohe Methylierung einer DNA-Region können spezielle Transkriptionsfaktoren an diese Region binden, die die Expression umliegender Gene aktivieren"),
     answer("Durch hohe Methylierung einer DNA-Region können Transkriptionsfaktoren nicht mehr an diese Region binden", correct=TRUE),
     answer("DNA-Methylierung wirkt sich direkt auf die Translation von mRNAs aus"),
-    answer("Eine hohe Methylierung der Promotorregion inhibiert die Transkription des Gens", correct=TRUE)
+    answer("Eine hohe Methylierung der Promotorregion inhibiert die Transkription des Gens", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -50,19 +52,22 @@ quiz(
     answer("Sie erzeugt Turbulenzen, die Zellen besser mischen"),
     answer("Sie hält einen gefilterten, gleichmäßigen Luftstrom aufrecht, um Kontamination zu minimieren", correct = TRUE),
     answer("Sie kühlt das Medium und die Zellen konstant auf 4 °C"),
-    answer("Sie sterilisiert mit UV-Licht alle 24 h automatisch")
+    answer("Sie sterilisiert mit UV-Licht alle 24 h automatisch"),
+    allow_retry=TRUE
   ),
   question("Welche der folgenden Maßnahmen reduziert Kontaminationsquellen in der Zellkultur?",
     answer("Handschuhe und Kittel tragen", correct = TRUE),
     answer("Hände desinfizieren", correct = TRUE),
     answer("Arbeitsbank nur mit Wasser abwischen"),
-    answer("UV-Bestrahlung der Werkbank", correct = TRUE)
+    answer("UV-Bestrahlung der Werkbank", correct = TRUE),
+    allow_retry=TRUE
   ),
   question("Warum werden die Zellen von den Zellkulturschalen abgelöst?",
     answer("Weil nur so die Zellen gesammelt und zu einem Zellpellet zentrifugiert werden können", correct = TRUE),
     answer("Um die Zellteilung zu fördern und mehr DNA zu produzieren"),
     answer("Weil sie anhaftend (adherent) auf der Schale wachsen", correct = TRUE),
-    answer("Weil die DNA an der Oberfläche der Zellkulturschale haftet")
+    answer("Weil die DNA an der Oberfläche der Zellkulturschale haftet"),
+    allow_retry=TRUE
   )
 )
 ```
@@ -75,12 +80,14 @@ quiz(
     answer("Beschleunigt die Replikation der DNA, um höhere Ausbeuten zu erzielen"),
     answer("Erhöht den Kontakt der Reagenzien, sodass DNA und andere Moleküle effizient getrennt werden können", correct=TRUE),
     answer("Hilft, Zellbestandteile und Lipide in die organische Phase zu überführen, sodass die DNA sauber in der wässrigen Phase bleibt", correct=TRUE),
-    answer("Stabilisiert die DNA-Struktur")
+    answer("Stabilisiert die DNA-Struktur"),
+    allow_retry=TRUE
   ),
   question("Was benötigt man zur Fällung der DNA?",
     answer("Ausschließlich Alkohol in Form von Isopropanol"),
     answer("Lediglich Salz in Form von Natriumacetat"),
-    answer("Alkohol in Form von Isopropanol und Salz in Form von Natriumacetat", correct=TRUE)
+    answer("Alkohol in Form von Isopropanol und Salz in Form von Natriumacetat", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -94,7 +101,8 @@ quiz(
   question("Welche Aussagen zur Bisulfit-Conversion sind korrekt?",
     answer("Die Behandlung der DNA mit Bisulfit wirkt sich auf Cytosine je nach Methylierungszustand unterschiedlich aus", correct=TRUE),
     answer("Methyliertes Cytosin wird über Zwischenschritte zu Thymin umgewandelt"),
-    answer("Unmethyliertes Cytosin wird über Zwischenschritte zu Thymin umgewandelt", correct=TRUE)
+    answer("Unmethyliertes Cytosin wird über Zwischenschritte zu Thymin umgewandelt", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -106,7 +114,8 @@ quiz(
   question("Wie viele Sequenzvarianten einer genomischen Region gibt es nach erfolgreicher Bisulfitbehandlung und Amplifikation?",
     answer("Es gibt eine Variante, da die DNA entweder methyliert oder unmethyliert vorliegt"),
     answer("Es gibt zwei Varianten, da die DNA in einigen zellen methyliert und in anderen unmethyliert sein kann"),
-    answer("Es kann nicht genau bestimmt werden, da die Methylierung jedes CpGs sich von Zelle zu Zelle unterscheiden kann", correct=TRUE)
+    answer("Es kann nicht genau bestimmt werden, da die Methylierung jedes CpGs sich von Zelle zu Zelle unterscheiden kann", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -119,7 +128,8 @@ quiz(
     answer("In der Sample_Group sollte jede Probe entweder als 'Tumor' oder 'Gesund' benannt werden, um die beiden gruppen unterscheiden zu können", correct=TRUE),
     answer("Im Sample_Name sollte jede Probe entweder als 'Tumor' oder 'Gesund' benannt werden, um die beiden gruppen unterscheiden zu können"),
     answer("Es sollte insgesamt zwei Zeilen im Samplesheet geben, eine für die Tumorprobe, die andere für die gesunde Probe"),
-    answer("Es sollte insgesamt mehr als zwei Zeilen geben, da für die beiden Gruppen unbedingt mehrere Replikate gemacht worden sein sollten", correct=TRUE)
+    answer("Es sollte insgesamt mehr als zwei Zeilen geben, da für die beiden Gruppen unbedingt mehrere Replikate gemacht worden sein sollten", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -130,7 +140,8 @@ quiz(
 quiz(
   question("Auf jedem Spot gibt es genau eine Sonde mit bekannter DNA Sequenz, die mit dem passenden DNA Fragment aus der Probe hybridisieren soll.",
     answer("Wahr"),
-    answer("Falsch", correct=TRUE)
+    answer("Falsch", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -140,7 +151,8 @@ quiz(
   question("Wähle alle zutreffenden Aussagen aus.",
     answer("Jeder BeadChip enthält 8 Microarrays auf denen jeweils eine Probe ausgewertet werden kann", correct=TRUE),
     answer("Ein Microarray enthält viele Spots. jeder Spot enthät viele Sonden einer bekannten DNA Sequenz", correct=TRUE),
-    answer("Die Sonden auf dem BeadChip enthalten doppelsträngige DNA")
+    answer("Die Sonden auf dem BeadChip enthalten doppelsträngige DNA"),
+    allow_retry=TRUE
   )
 )
 ```
@@ -153,17 +165,20 @@ quiz(
     answer("Die Sequenz der Sonden endet mit dem CpG von Interesse", correct=TRUE),
     answer("Die Sequenz der Sonden endet vor der letzten Base des CpGs von Interesse, diese Base wird anschließend genutzt, um den Methylierungszustand zu bestimmen"),
     answer("Der Methylierungsgrad wird über den Vergleich von grüner zu roter Fluoreszenz bestimmt"),
-    answer("Der methylierungsgrad benötigt nicht zwingend zwei Fluoreszenzfarben, sondern wird über den Unterschied im Fluoreszenzsignal zweier Spots auf dem Microarray bestimmt", correct=TRUE)
+    answer("Der methylierungsgrad benötigt nicht zwingend zwei Fluoreszenzfarben, sondern wird über den Unterschied im Fluoreszenzsignal zweier Spots auf dem Microarray bestimmt", correct=TRUE),
+    allow_retry=TRUE
   ),
   question("Treffen die anderen Aussagen auf Typ II Sonden zu?",
     answer("Wahr", correct=TRUE),
-    answer("Falsch")
+    answer("Falsch"),
+    allow_retry=TRUE
   ),
   question("Welche Outputs erhalten wir aus Infinium MethylationEPIC v2.0 BeadChip Experimenten?",
     answer("Ein Samplesheet", correct=TRUE),
     answer("Einen _Red.idat und einen _Grn.idat File pro BeadChip"),
     answer("Einen _Red.idat und einen _Grn.idat File pro Probe", correct=TRUE),
-    answer("Einen _Red.idat und einen _Grn.idat File pro Microarray", correct=TRUE)
+    answer("Einen _Red.idat und einen _Grn.idat File pro Microarray", correct=TRUE),
+    allow_retry=TRUE
   )
 )
 ```
@@ -181,7 +196,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Wie unterscheidet sich die Methylierung von cg25032595_BC11 zwischen den Samplegroups?",
     rows=3,
@@ -192,7 +208,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Auf welchem Gen liegt cg25032595_BC11?",
     rows=3,
@@ -203,7 +220,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Wie unterscheidet sich die Methylierung dieses Gens zwischen den Samplegroups (grob zusammengefasst)?",
     rows=3,
@@ -214,7 +232,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Können Sie anhand der Methylierung eine Aussage treffen, wie sich die Expression zwischen den Samplegroups unterscheiden könnte?",
     rows=3,
@@ -225,7 +244,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Sind die Samplegroups Ihrer Meinung nach sinnvoll gesetzt? Begründen Sie.",
     rows=3,
@@ -236,7 +256,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   caption = "Dieses Quiz enthält Freitextaufgaben. Wir können Ihnen daher nicht direktes Feedback geben, ob Ihre Antwort korrekt ist."
 )
@@ -255,7 +276,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Wie würden Sie damit umgehen?",
     rows=3,
@@ -266,7 +288,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Was ist problematisch an mystery_data_2?",
     rows=3,
@@ -277,7 +300,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   question_text("Wie würden Sie damit umgehen?",
     rows=3,
@@ -288,7 +312,8 @@ quiz(
       else{
         incorrect()
       }
-    })
+    }),
+    allow_retry=TRUE
   ),
   caption = "Dieses Quiz enthält Freitextaufgaben. Wir können Ihnen daher nicht direktes Feedback geben, ob Ihre Antwort korrekt ist."
 )
