@@ -95,8 +95,9 @@ annotateGR <- function(dmrs_gr){
 
 makeHeatmap_dmrregions_cluster <- function(pdfname, dmrs, anno, myNorm, targets, pd_col, compare_values) {
   ##############
+  # Function for creating heatmaps for DMRs +- a region of 100 bases
   # pdfname = Filename for pdf
-  # dmrs = Dataframe of annotated dmrs
+  # dmrs = Dataframe of annotated dmrs (limited 
   # anno = Annotation for the array
   # myNorm = beta-values 
   # targets = Sample Sheet (attributes)
@@ -143,12 +144,12 @@ makeHeatmap_dmrregions_cluster <- function(pdfname, dmrs, anno, myNorm, targets,
     #Beta-Werte extrahieren & nach Position sortieren
     gene_beta <- myNorm[common_gene_probes_all, , drop = FALSE]
     
-    #2️⃣ CpGs nach genomischer Position sortieren
+    # CpGs nach genomischer Position sortieren
     probe_anno <- anno[match(rownames(gene_beta), anno$Name), ]
     ord <- order(probe_anno$chr, probe_anno$pos)
     gene_beta <- gene_beta[ord, , drop = FALSE]
     
-    #3️⃣ Long format für ggplot
+    # Long format für ggplot
     
     #Long-Format
     df_long <- gene_beta %>%
@@ -258,6 +259,7 @@ makeHeatmap_dmrregions_cluster <- function(pdfname, dmrs, anno, myNorm, targets,
 
 makeHeatmap_genename_cluster <- function(pdfname, dmrs, anno, myNorm, targets, pd_col, compare_values) {
   ##############
+  # Function to generate heatmaps for the genes associated with the DMRs
   # pdfname = Filename for pdf
   # dmrs = Dataframe of annotated dmrs
   # anno = Annotation for the array
@@ -302,12 +304,12 @@ makeHeatmap_genename_cluster <- function(pdfname, dmrs, anno, myNorm, targets, p
     #Beta-Werte extrahieren & nach Position sortieren
     gene_beta <- myNorm[common_gene_probes_all, , drop = FALSE]
     
-    #2️⃣ CpGs nach genomischer Position sortieren
+    # CpGs nach genomischer Position sortieren
     probe_anno <- anno[match(rownames(gene_beta), anno$Name), ]
     ord <- order(probe_anno$chr, probe_anno$pos)
     gene_beta <- gene_beta[ord, , drop = FALSE]
     
-    #3️⃣ Long format für ggplot
+    # Long format für ggplot
     
     #Long-Format
     df_long <- gene_beta %>%
