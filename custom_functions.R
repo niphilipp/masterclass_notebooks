@@ -143,7 +143,7 @@ makeHeatmap_dmr <- function(pdfname, dmrs, anno, myNorm, targets, pd_col, compar
       ) +
       labs(
         x = "Samples",
-        y = "CpGs der DMR +- 100 bp",
+        y = "CpGs der DMR",
         title = paste("DMR", i)
       )
     
