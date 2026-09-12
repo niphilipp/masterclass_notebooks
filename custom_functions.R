@@ -331,6 +331,7 @@ annotateDMRs <- function(dmrs, anno, myNorm = NULL) {
   # - chr
   # - pos
   # - UCSC_RefGene_Name
+  # - UCSC_RefGene_Group
   
   # myNorm:
   # Optional. Matrix mit CpGs als rownames.
@@ -362,6 +363,7 @@ annotateDMRs <- function(dmrs, anno, myNorm = NULL) {
   dmrs$n_CpGs <- 0
   dmrs$CpGs <- NA
   dmrs$Genes <- NA
+  dmrs$RefGene_Group <- NA
   
   ########################################
   # DMRs annotieren
@@ -449,6 +451,40 @@ annotateDMRs <- function(dmrs, anno, myNorm = NULL) {
         collapse = ";"
       )  
     }
+    
+    ########################################
+    # Genomische Region übernehmen
+    # z.B. TSS1500, TSS200, Body, 5'UTR
+    ########################################
+    
+    refgene_groups <- unique(
+      unlist(
+        strsplit(
+          dmr_cpgs$UCSC_RefGene_Group,
+          ";"
+        )
+      )
+    )
+    
+    # Leere / fehlende Annotationen entfernen
+    refgene_groups <- refgene_groups[
+      !is.na(refgene_groups) &
+        refgene_groups != ""
+    ]
+    
+    
+    ########################################
+    # RefGene_Group speichern
+    ########################################
+    
+    if (length(refgene_groups) > 0) {
+      
+      dmrs$RefGene_Group[i] <- paste(
+        refgene_groups,
+        collapse = ";"
+      )
+    }
+    
     cat(
       "DMR", i,
       "annotiert:",
