@@ -15,9 +15,9 @@ myDMR  <- readRDS("/home/jovyan/myDMR.rds")
 DMR=myDMR
 beta=myNorm
 pheno=myLoad$pd$Sample_Group
-runDMP=TRUE
+runDMP=FALSE
 compare.group=NULL
-arraytype="EPICv2"
+arraytype="EPICv1"
 
 # Set globals
 utils::globalVariables(c("myDMR","myLoad","myNorm","probe.features.epic","probe.features","Value","ID","Sample","aggregate","x","y","fitted","loess","gene","Number","Variance"))
